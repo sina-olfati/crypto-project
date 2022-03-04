@@ -1,16 +1,17 @@
 import React from 'react'
 
+// css
+import styles from "./Coin.module.css"
+
 const Coin = ({coin}) => {
   return (
-    <div style={{borderBottom: "1px silver solid", padding: 10, display: "flex", justifyContent: "space-around", alignItems: "center"}}>
-      <img src={coin.image} style={{height: 40}} alt={coin.name} />
-      <div style={{border: "dashed white", width: "80%", padding: "0 30px", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-        <span>{coin.name}</span>
-        <span>{coin.symbol.toUpperCase()}</span>
-        <span>{coin.current_price.toLocaleString()}</span>
-        <span>{coin.price_change_percentage_24h}</span>
-        <span>{coin.market_cap.toLocaleString()}</span>
-      </div>
+    <div className={styles.container}>
+      <img className={styles.image} src={coin.image} alt={coin.name} />
+      <span className={styles.name}>{coin.name}</span>
+      <span className={styles.symbol}>{coin.symbol.toUpperCase()}</span>
+      <span className={styles.currentPrice}>$ {coin.current_price.toLocaleString()}</span>
+      <span className={coin.price_change_percentage_24h > 0 ? styles.greenPriceChange : styles.redPriceChange }>{coin.price_change_percentage_24h.toFixed(2)}%</span>
+      <span className={styles.marketCap}>$ {coin.market_cap.toLocaleString()}</span>
     </div>
   )
 }
