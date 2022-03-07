@@ -1,3 +1,7 @@
+#My Introduction
+
+This project provides you realtime information about 250 crypto currencies. you can even search among them to find the currency you want!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
